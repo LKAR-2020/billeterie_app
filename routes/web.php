@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LieusController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,5 +17,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+    Route::get('/lieus', [LieusController::class, 'index'])->name('lieus.index');
+    Route::get('/lieus/create', [LieusController::class, 'create'])->name('lieus.create');
+    Route::post('/lieus', [LieusController::class, 'store'])->name('lieus.store');
+    Route::get('/lieus/{id}', [LieusController::class, 'show'])->name('lieus.show');
+// Ajoutez d'autres routes selon les besoins
+
 
 require __DIR__.'/auth.php';
