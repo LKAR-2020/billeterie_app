@@ -15,7 +15,8 @@ class LieusController extends Controller
     public function index()
     {
         $lieus = Lieu::all();
-        return view('lieus.index', compact('lieus'));
+        dd($lieus);
+        return view('lieus', compact('lieus'));
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AcceuilController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LieusController;
 use App\Http\Controllers\ProfileController;
@@ -11,6 +12,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::resource('acceuil', AcceuilController::class)->only(['index']);
+Route::get('/Acceuil', [AcceuilController::class, 'index'])->name('Acceuil.index');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
