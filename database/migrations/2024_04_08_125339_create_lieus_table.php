@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('adresse');
+            $table->string('localisation');
             $table->string('ville');
             $table->string('pays');
             // Ajoutez d'autres colonnes au besoin

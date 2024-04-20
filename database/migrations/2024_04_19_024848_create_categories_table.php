@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('artistes', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('photo');
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('blaze'); //son nom d'artiste
-            $table->string('genre_musical')->nullable();
+            $table->text('nom');
+            $table->string('color')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('artistes');
+        Schema::dropIfExists('categories');
     }
 };

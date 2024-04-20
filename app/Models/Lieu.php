@@ -14,7 +14,7 @@ class Lieu extends Model
 
      // Colonnes remplissables
      protected $fillable = [
-         'nom', 'adresse', 'ville', 'pays',
+         'nom', 'adresse', 'ville', 'pays','localisation',
      ];
 
      // Si vous ne voulez pas de timestamps (created_at, updated_at)

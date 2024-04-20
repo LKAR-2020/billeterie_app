@@ -9,7 +9,7 @@ class Billet extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['concert_id','user_id', 'prix', 'qr_code'];
+    protected $fillable = ['concert_id','user_id', 'prix', 'qr_code', 'categorie'];
 
     public function concert()
     {

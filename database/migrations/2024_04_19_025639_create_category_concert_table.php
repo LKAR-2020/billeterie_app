@@ -11,18 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('billets', function (Blueprint $table) {
+        Schema::create('category_concert', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('categorie_id');
             $table->unsignedBigInteger('concert_id');
-            $table->foreign('concert_id')->references('id')->on('concerts')->onDelete('cascade');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('categorie');
-            $table->decimal('prix', 8, 2);
-            $table->string('qr_code')->unique();
             $table->timestamps();
 
-
+            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('concert_id')->references('id')->on('concerts')->onDelete('cascade');
         });
     }
 
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('billets');
+        Schema::dropIfExists('category_concert');
     }
 };

@@ -50,6 +50,13 @@ return [
             'url' => env('APP_URL').'/storage/qrcodes',
             'visibility' => 'public',
         ],
+        'profil_artiste' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/profil_artiste'),
+            'url' => env('APP_URL').'/storage/profil_artiste',
+            'visibility' => 'public',
+        ],
+
 
 
         's3' => [

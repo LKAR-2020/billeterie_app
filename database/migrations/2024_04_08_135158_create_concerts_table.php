@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('concerts', function (Blueprint $table) {
             $table->id();
+            $table->string('photo');
             $table->string('nom');
-            $table->dateTime('date');
+            $table->string('description');
+            $table->dateTime('date_debut');
+            $table->dateTime('date_fin');
             $table->foreignId('lieu_id')->constrained()->onDelete('cascade');
             $table->decimal('prix', 8, 2);
             $table->timestamps();
